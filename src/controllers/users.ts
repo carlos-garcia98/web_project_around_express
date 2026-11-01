@@ -9,23 +9,23 @@ interface UsersData {
   _id: string;
 }
 
-const users_path = path.join(import.meta.dirname, "../../data/users.json");
+const usersPath = path.join(import.meta.dirname, "../../data/users.json");
 
 const getUsers: RequestHandler = async (req, res) => {
-  const data = await fs.readFile(users_path, "utf8");
+  const data = await fs.readFile(usersPath, "utf8");
   res.json(JSON.parse(data));
 }
 
 const getUserById: RequestHandler = async (req, res) => {
   try {
-    const data = await fs.readFile(users_path, "utf8");
+    const data = await fs.readFile(usersPath, "utf8");
 
     const users: UsersData[] = JSON.parse(data);
     const user = users.find((user) => req.params.userId === user._id);
 
     if (!user) {
       return res.status(404).json({
-        "message": "ID de usuario no encontrado"
+        "message": "user ID not found"
       });
     }
 
