@@ -1,0 +1,38 @@
+{
+  "name": "web_project_around_express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/app.js",
+    "dev": "tsx watch src/app.ts",
+    "lint": "eslint src/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carlos-garcia98/web_project_around_express.git"
+  },
+  "keywords": [],
+  "author": "Carlos Garcia",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/carlos-garcia98/web_project_around_express/issues"
+  },
+  "homepage": "https://github.com/carlos-garcia98/web_project_around_express#readme",
+  "dependencies": {
+    "express": "^5.3.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.6",
+    "eslint": "^10.13.0",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.9.10",
+    "tsx": "^4.23.15",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.72.1"
+  }
+}
