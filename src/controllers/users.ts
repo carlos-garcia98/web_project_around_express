@@ -12,8 +12,15 @@ interface UsersData {
 const usersPath = path.join(import.meta.dirname, "../../data/users.json");
 
 const getUsers: RequestHandler = async (req, res) => {
-  const data = await fs.readFile(usersPath, "utf8");
-  res.json(JSON.parse(data));
+  try {
+    const data = await fs.readFile(usersPath, "utf8");
+    res.json(JSON.parse(data));
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      "message": "An error has occurred on the server"
+    });
+  }
 }
 
 const getUserById: RequestHandler = async (req, res) => {
@@ -33,6 +40,9 @@ const getUserById: RequestHandler = async (req, res) => {
 
   } catch (error) {
     console.error(error);
+    res.status(500).json({
+      "message": "An error has occurred on the server"
+    });
   }
 }
 
