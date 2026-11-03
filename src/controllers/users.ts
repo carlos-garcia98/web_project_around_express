@@ -32,7 +32,7 @@ const getUserById: RequestHandler = async (req, res) => {
 
     if (!user) {
       return res.status(404).json({
-        "message": "user ID not found"
+        "message": "User ID not found"
       });
     }
 
